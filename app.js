@@ -3,18 +3,18 @@
 //const { MongoClient } = require("mongodb");
 
 const express = require('express');
-const serverless = require('serverless-http');
 
 const app = express();
 app.use(express.json());
-const router = express.Router();
 
-router.get('/heros',(req,res) => {
+
+
+app.get('/heros',(req,res) => {
   res.send("It Working")
 });
 
-app.use('/.netlify/functions/api/', router);
-module.exports.handler = serverless(app);
+//app.use('/.netlify/functions/api/', router);
+//module.exports.handler = serverless(app);
 
 /* MongoClient.connect(process.env.DBLINK, async function (err, client) {
   //module.exports = client
@@ -29,3 +29,6 @@ module.exports.handler = serverless(app);
 //For Test
 
 
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
