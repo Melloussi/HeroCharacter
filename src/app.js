@@ -1,6 +1,6 @@
-const dotenv = require("dotenv")
-dotenv.config()
-const { MongoClient } = require("mongodb");
+//const dotenv = require("dotenv")
+//dotenv.config()
+//const { MongoClient } = require("mongodb");
 
 const express = require('express');
 const serverless = require('serverless-http');
@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 const router = express.Router();
 
-router.get('/',(req,res) => {
+router.get('/heros',(req,res) => {
   res.send("It Working")
 });
 
